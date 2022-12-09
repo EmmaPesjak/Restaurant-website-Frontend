@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+    background-image: url("img/pexels-sunsetoned-7235677.jpg");
+    background-size: 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;
+}
