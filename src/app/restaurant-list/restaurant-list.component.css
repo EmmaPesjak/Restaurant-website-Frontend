@@ -1,0 +1,50 @@
+p {
+    color: rgb(206, 114, 3);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.0em;
+    margin-left: 1em;
+}
+
+table {
+    color: maroon;
+    font-size: large;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.452);
+}
+
+tbody>tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.082);
+}
+
+tbody ul {
+    margin-top: 0;
+}
+
+input[type=button] {
+    background-color: rgb(226, 126, 4);
+    border: none;
+    width: 100%;
+    color: white;
+    padding: .2em 0;
+    border-radius: .25em;
+    font-size: 1.0em;
+    cursor: pointer;
+    margin-top: .2em;
+    margin-bottom: .2em;
+    padding: .2em;
+}
+
+input[type=button]:hover {
+    background-color: maroon;
+}

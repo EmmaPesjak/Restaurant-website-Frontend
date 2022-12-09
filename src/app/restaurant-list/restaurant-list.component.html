@@ -1,0 +1,21 @@
+<p>All | Brooklyn | Manhattan | The Bronx | Staten Island </p>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Rating</td>
+            <td>Price Range</td>
+        
+        </tr>
+    </thead>
+    <tbody id="courses_table">
+        <ng-container *ngFor="let restaurant of restaurants">
+            <tr>
+                <td>{{ restaurant.name }}</td>
+                <td>{{ restaurant.rating }}</td>
+                <td>{{ restaurant.priceRange }}</td>
+                <td><input type="button" value="Details"></td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
