@@ -1,1 +1,35 @@
-<p>home works!</p>
+
+<main class="home">
+
+    <div class="left-col">
+        <p>All | Brooklyn | Manhattan | The Bronx | Staten Island </p>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td class="course-name">Rating</td>
+                        <td>Address</td>
+                        <td>Price Range</td>
+                        <td>Latest Review</td>
+                    </tr>
+                </thead>
+                <tbody id="courses_table">
+                    <ng-container *ngFor="let restaurant of restaurants">
+                        <tr>
+                            <td>{{ restaurant.name }}</td>
+                            <td>{{ restaurant.rating }}</td>
+                            <td>{{ restaurant.address }}</td>
+                            <td>{{ restaurant.priceRange }}</td>
+                            <td class="center">{{ restaurant.latestReview }}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+    </div>
+
+    <div class="right-col">
+        <app-restaurant-info></app-restaurant-info>
+    </div>
+    
+</main>
+
