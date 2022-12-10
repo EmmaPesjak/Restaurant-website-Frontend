@@ -1,9 +1,9 @@
-p {
+h1 {
     color: rgb(206, 114, 3);
     font-weight: bold;
     display: block;
     margin-bottom: 1em;
-    font-size: 1.0em;
+    font-size: 1.2em;
     margin-left: 1em;
 }
 
@@ -24,7 +24,7 @@ tbody>tr:nth-child(odd) {
 }
 
 tbody>tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.082);
+    background-color: rgba(255, 255, 255, 0.20);
 }
 
 tbody ul {

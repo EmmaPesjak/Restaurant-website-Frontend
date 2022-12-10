@@ -1,0 +1,35 @@
+
+
+h1 {
+    color: rgb(206, 114, 3);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    margin-left: 1em;
+}
+
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+tr {
+    color: maroon;
+    font-size: large;
+}
+
+
+tbody>tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.452);
+}
+
+tbody>tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
