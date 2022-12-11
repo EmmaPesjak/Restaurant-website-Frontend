@@ -1,12 +1,17 @@
-<h1>All | Brooklyn | Manhattan | The Bronx | Staten Island </h1>
+<h1>
+    <span (click)="changeNeighborhood('All')">All</span> | 
+    <span (click)="changeNeighborhood('Brooklyn')">Brooklyn</span> | 
+    <span (click)="changeNeighborhood('Manhattan')">Manhattan</span> | 
+    <span (click)="changeNeighborhood('The Bronx')">The Bronx</span> | 
+    <span (click)="changeNeighborhood('Staten Island')">Staten Island</span></h1>
 <table>
     <tbody id="neighborhood-restaurants-table">
         <ng-container *ngFor="let neighborhood of neighborhoods">
             <tr>
-                <td class="borough">{{ neighborhood.name }}</td>
-                <td>Size(km²): {{ neighborhood.size }}</td>
-                <td>Population: {{ neighborhood.population }}</td>
-                <td></td>
+                <td class="borough borough-line">{{ neighborhood.name }}</td>
+                <td class="borough-line">Size(km²): {{ neighborhood.size }}</td>
+                <td class="borough-line">Population: {{ neighborhood.population }}</td>
+                <td class="borough-line"></td>
             </tr>
 
             <tr>

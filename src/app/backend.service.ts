@@ -22,7 +22,7 @@ export class BackendService {
   }
 
   getNeighborhoodWithRestaurants(neighborhood: string): Promise<Neighborhood> {
-    const endpoint = this.API_URL + '/api/neighborhood/' + neighborhood;
+    const endpoint = this.API_URL + '/api/neighborhoods/' + neighborhood;
     const responseObservable = this.http.get<Neighborhood>(endpoint);
     const responsePromise = firstValueFrom(responseObservable);
     return responsePromise;

@@ -15,4 +15,14 @@ tbody ul {
     font-weight: bold;
 }
 
+.borough-line {
+    border-bottom: 1px solid;
+}
 
+span {
+    cursor: pointer;
+}
+
+span:hover {
+    color: maroon;
+}

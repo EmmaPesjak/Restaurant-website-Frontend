@@ -20,11 +20,11 @@ export class RestaurantListComponent {
   }
 
   ngOnInit(): void {
-    this.getNeighborhoodWithRestaurants();
+    this.getNeighborhoodsWithRestaurants();
   }
 
 
-  getNeighborhoodWithRestaurants() {
+  getNeighborhoodsWithRestaurants() {
     this.backend.getNeighborhoodsWithRestaurants()
       .then(neighborhoods => {
         this.neighborhoods = neighborhoods;
@@ -34,5 +34,22 @@ export class RestaurantListComponent {
 
   showDetails(restaurantName: string) {
     console.log(restaurantName)
+  }
+
+  changeNeighborhood(neighborhoodName: string) {
+    //töm neighborhoods och hämta igen, kanske ingen optimal lösning men det är för att få med kravet get one
+    this.neighborhoods = []
+
+    if (neighborhoodName == "All") {
+      this.getNeighborhoodsWithRestaurants();
+    } else {
+      this.backend.getNeighborhoodWithRestaurants(neighborhoodName)
+      .then(neighborhood => {
+        this.neighborhoods = [neighborhood];
+        console.log(neighborhood)
+      })
+      .catch(error => console.error(`An error occurred getting the neighborhood and restaurants: ${error}`));
+    }
+  
   }
 }
