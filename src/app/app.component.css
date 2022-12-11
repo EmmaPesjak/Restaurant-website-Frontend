@@ -5,9 +5,14 @@ h1 {
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 header {
     margin-left: 5em;
     margin-bottom:  .5em;
+}
+
+.active {
+    border-bottom: 1px solid;
 }

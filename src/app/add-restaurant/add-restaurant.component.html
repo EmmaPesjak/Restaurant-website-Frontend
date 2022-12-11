@@ -3,69 +3,58 @@
     <h1>Add restaurant</h1>
 
     <label>Name:
-      <input [(ngModel)]="name" name="name"/>
+      <input class="form-field" [(ngModel)]="name" name="name"/>
     </label>&nbsp;<br>
   
     <label>Rating:
-      <input [(ngModel)]="rating" name="rating" type="number" min="0" max="5"/>
+      <input class="form-field" [(ngModel)]="rating" name="rating" type="number" min="0.0" max="5.0"/>
     </label>&nbsp;<br>
   
     <label>Address:
-      <input [(ngModel)]="address" name="address"/>
+      <input class="form-field" [(ngModel)]="address" name="address"/>
     </label>&nbsp;<br>
   
     <label>Neighborhood:
-      <input [(ngModel)]="neighborhood" name="neighborhood"/>
+      <input class="form-field" [(ngModel)]="neighborhood" name="neighborhood"/>
     </label>&nbsp;<br>
   
     <label>Owner:
-      <input [(ngModel)]="owner" name="owner"/>
+      <input class="form-field" [(ngModel)]="owner" name="owner"/>
     </label>&nbsp;<br>
 
     <label>Cuisine:
-        <input [(ngModel)]="cuisine" name="cuisine"/>
+        <input class="form-field" [(ngModel)]="cuisine" name="cuisine"/>
     </label>&nbsp;<br>
 
     <label>Head Chef:
-        <input [(ngModel)]="headChef" name="headChef"/>
+        <input class="form-field" [(ngModel)]="headChef" name="headChef"/>
     </label>&nbsp;<br>
 
     <label>Price range:
-        <input [(ngModel)]="priceRange" name="priceRange"/>
+        <input class="form-field" [(ngModel)]="priceRange" name="priceRange"/>
     </label>&nbsp;<br>
 
     <label>Michelin stars:
-        <input [(ngModel)]="michelinStars" name="michelinStars" type="number" min="0" max="3"/>
+        <input class="form-field" [(ngModel)]="michelinStars" name="michelinStars" type="number" min="0" max="3"/>
     </label>&nbsp;<br>
 
     <label>Guests per year:
-        <input [(ngModel)]="guestsPerYear" name="guestsPerYear" type="number" min="0"/>
+        <input class="form-field" [(ngModel)]="guestsPerYear" name="guestsPerYear" type="number" min="0"/>
     </label>&nbsp;<br>
 
     <label>Phone:
-        <input [(ngModel)]="phone" name="phone"/>
+        <input class="form-field" [(ngModel)]="phone" name="phone"/>
     </label>&nbsp;<br>
 
     <label>Number of reviews:
-        <input [(ngModel)]="noOfReviews" name="noOfReviews" type="number" min="0"/>
+        <input class="form-field" [(ngModel)]="noOfReviews" name="noOfReviews" type="number" min="0"/>
     </label>&nbsp;<br>
 
     <label>Latest review:
-        <input [(ngModel)]="latestReview" name="latestReview"/>
+        <input class="form-field" [(ngModel)]="latestReview" name="latestReview"/>
     </label>&nbsp;<br>
   
-    <!-- (click)="addUser()" => call addUser method on each click -->
-    <span class="button add" (click)="addRestaurant()">Add restaurant</span>
 
-    <input type="button" value="Add restaurant" (click)="addRestaurant()">
+    <input type="button" value="Add" (click)="addRestaurant()">
   
-    <!--
-          We use the *ngIf structural directive to hide or show a message (error or success when adding a user).
-          
-          Property binding in Angular helps us set values for properties of HTML elements.
-          We use property binding the set wich css class to use for styling the <p> element.
-          If the message is of type 'success' the success class (defind in add-user.component.css) is used.
-          If the message is of type 'error' the error class (defind in add-user.component.css) is used.
-        
-    <p *ngIf="message" [class]="message.type">{{ message.message }}</p>-->
 </form>

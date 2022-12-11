@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RestaurantInfoComponent } from './restaurant-info/restaurant-info.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
+import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/update-delete-restaurants.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddRestaurantComponent } from './add-restaurant/add-restaurant.componen
     AdminComponent,
     RestaurantInfoComponent,
     RestaurantListComponent,
-    AddRestaurantComponent
+    AddRestaurantComponent,
+    UpdateDeleteRestaurantsComponent
   ],
   imports: [
     BrowserModule,

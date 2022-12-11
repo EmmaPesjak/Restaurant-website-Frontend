@@ -6,8 +6,31 @@ h1 {
     margin-bottom: 1em;
     font-size: 1.2em;
     margin-left: 1em;
+    min-width: 380px;
+}
+
+label {
+    padding-left: 1em;
+    padding-right: 1em;
+    color: maroon;
+    font-size: large;
+}
+
+.form-field {
+    margin-bottom: .8em;
+    padding: .2em;
+    background-color: rgba(255, 255, 255, 0.705);
+    border: 1px solid white;
+}
+
+.form-field:focus {
+    outline: none;
+    color: maroon;
 }
 
 input[type=button] {
-    width: 35%;
+    font-size: large;
+    width: 25%;
+    margin-left: 1em;
+    margin-bottom: .4em;
 }

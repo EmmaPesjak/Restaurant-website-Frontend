@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Owner</td>
+        </tr>
+    </thead>
+    <tbody id="restaurants-table">
+        <ng-container *ngFor="let restaurant of restaurants">
+            <tr>
+                <td>{{ restaurant.name }}</td>
+                <td>{{ restaurant.owner }}</td>
+                <td> 
+                    <input type="button" value="Update" (click)="updateRestaurant('hej', 'hej')">
+                </td>
+                <td>
+                    <input type="button" value="Delete" (click)="deleteRestaurant(restaurant.name)">
+                </td> 
+            </tr>
+           
+        </ng-container>
+    </tbody>
+</table>

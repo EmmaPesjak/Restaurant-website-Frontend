@@ -22,9 +22,30 @@ input[type=button] {
     margin-top: .2em;
     margin-bottom: .2em;
     padding: .2em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 input[type=button]:hover {
     background-color: maroon;
+}
+
+table {
+    color: maroon;
+    font-size: large;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.452);
+}
+
+tbody>tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+td {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 

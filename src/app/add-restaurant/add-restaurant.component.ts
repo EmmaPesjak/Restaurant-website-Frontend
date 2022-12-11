@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { BackendService } from '../backend.service';
 import { Restaurant } from '../restaurant';
 import { HttpErrorResponse } from "@angular/common/http";
+import { RestaurantInfoComponent } from '../restaurant-info/restaurant-info.component';
 
 @Component({
   selector: 'app-add-restaurant',
@@ -26,8 +27,6 @@ export class AddRestaurantComponent {
 
   @Output() newRestaurantEvent: EventEmitter<Restaurant>;
 
-
-
   constructor(private backend: BackendService) {
     this.name = "";
     this.rating = undefined;
@@ -43,14 +42,28 @@ export class AddRestaurantComponent {
     this.noOfReviews = undefined;
     this.latestReview = "";
 
-    // Tells Angular to create a new event emitter and that the 
-    // data it emits is of type User (when a new user is successfully added).
     this.newRestaurantEvent = new EventEmitter<Restaurant>();
   }
 
-
   addRestaurant() {
+    let addRestaurantPromise: Promise<Restaurant>;
 
+    //Här behövs ju massa validering och ett meddeland om att det gick/inte gick
+    
+    addRestaurantPromise = this.backend.addRestaurant({
+      name: this.name,
+      rating: this.rating ?? 0,
+      address: this.address,
+      neighborhood: this.neighborhood,
+      owner: this.owner,
+      cuisine: this.cuisine,
+      headChef: this.headChef,
+      priceRange: this.priceRange,
+      michelinStars: this.michelinStars ?? 0,
+      guestsPerYear: this.guestsPerYear ?? 0,
+      phone: this.phone,
+      noOfReviews: this.noOfReviews ?? 0,
+      latestReview: this.latestReview
+    });
   }
-
 }

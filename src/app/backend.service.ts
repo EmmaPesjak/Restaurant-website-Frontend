@@ -85,8 +85,8 @@ export class BackendService {
     return responsePromise;
   }
 
-  deleteRestaurant(restaurant: Restaurant) {
-    const endpoint = this.API_URL + '/api/restaurants/' + restaurant.name;
+  deleteRestaurant(restaurantName: string) {
+    const endpoint = this.API_URL + '/api/restaurants/' + restaurantName;
     const responseObservable = this.http.delete<Restaurant>(endpoint);
     const responsePromise = firstValueFrom(responseObservable);
     return responsePromise;

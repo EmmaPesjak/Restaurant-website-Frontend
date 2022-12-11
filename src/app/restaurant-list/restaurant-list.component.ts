@@ -19,7 +19,7 @@ export class RestaurantListComponent {
     this.neighborhoods = [];
   }
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.getNeighborhoodWithRestaurants();
   }
 
@@ -29,7 +29,7 @@ export class RestaurantListComponent {
       .then(neighborhoods => {
         this.neighborhoods = neighborhoods;
       })
-      .catch(error => console.error(`An error occurred getting all restaurants: ${error}`));
+      .catch(error => console.error(`An error occurred getting all neighborhoods and restaurants: ${error}`));
   }
 
   showDetails(restaurantName: string) {

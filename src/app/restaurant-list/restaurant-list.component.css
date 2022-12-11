@@ -7,26 +7,6 @@ h1 {
     margin-left: 1em;
 }
 
-table {
-    color: maroon;
-    font-size: large;
-    table-layout: auto;
-    border-collapse: collapse;
-}
-
-td {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-tbody>tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.452);
-}
-
-tbody>tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.20);
-}
-
 tbody ul {
     margin-top: 0;
 }
