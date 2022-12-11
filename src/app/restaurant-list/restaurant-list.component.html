@@ -21,7 +21,7 @@
                     <td>{{ restaurant.name}}</td>
                     <td>{{ restaurant.rating }}</td>
                     <td>{{ restaurant.priceRange }}</td>
-                    <td><input type="button" value="Details"></td>
+                    <td><input type="button" value="Details" (click)="showDetails(restaurant.name)"></td>
                 </tr>
             </ng-container>
         </ng-container>

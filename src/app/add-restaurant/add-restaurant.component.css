@@ -1,0 +1,13 @@
+
+h1 {
+    color: rgb(206, 114, 3);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    margin-left: 1em;
+}
+
+input[type=button] {
+    width: 35%;
+}

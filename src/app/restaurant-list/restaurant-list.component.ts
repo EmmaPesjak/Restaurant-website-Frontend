@@ -31,4 +31,8 @@ export class RestaurantListComponent {
       })
       .catch(error => console.error(`An error occurred getting all restaurants: ${error}`));
   }
+
+  showDetails(restaurantName: string) {
+    console.log(restaurantName)
+  }
 }

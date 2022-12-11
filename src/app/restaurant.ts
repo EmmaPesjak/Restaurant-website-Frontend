@@ -1,7 +1,7 @@
 export interface Restaurant {
     name: string;
-    rating: string;
-    address: number;
+    rating: number;
+    address: string;
     neighborhood: string;
     owner: string;
     cuisine: string;
