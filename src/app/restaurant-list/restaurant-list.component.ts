@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Restaurant } from '../restaurant';
 import { BackendService } from '../backend.service';
+import { Neighborhood } from '../neighborhood';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -11,20 +12,22 @@ export class RestaurantListComponent {
 
   // allt här ska ju inte vara här, bara testar
   restaurants: Restaurant[];
+  neighborhoods: Neighborhood[];
 
   constructor(private backend: BackendService) {
     this.restaurants = []; 
+    this.neighborhoods = [];
   }
 
    ngOnInit(): void {
-    this.getRestaurants();
+    this.getNeighborhoodWithRestaurants();
   }
 
 
-  getRestaurants() {
-    this.backend.getRestaurants()
-      .then(restaurants => {
-        this.restaurants = restaurants;
+  getNeighborhoodWithRestaurants() {
+    this.backend.getNeighborhoodsWithRestaurants()
+      .then(neighborhoods => {
+        this.neighborhoods = neighborhoods;
       })
       .catch(error => console.error(`An error occurred getting all restaurants: ${error}`));
   }

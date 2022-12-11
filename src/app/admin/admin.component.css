@@ -1,0 +1,18 @@
+.left-col {
+    background-color: rgba(255, 255, 255, 0.63);
+    margin-left: 4em;
+    margin-right: 4em;
+    border-radius: 15px;
+}
+
+.right-col {
+    margin-right: 4em;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.63);
+    max-width: 600px;
+}
+
+.admin {
+    display: flex;
+    justify-content: flex-start;
+}

@@ -31,6 +31,10 @@ tbody ul {
     margin-top: 0;
 }
 
+.borough {
+    font-weight: bold;
+}
+
 input[type=button] {
     background-color: rgb(226, 126, 4);
     border: none;
