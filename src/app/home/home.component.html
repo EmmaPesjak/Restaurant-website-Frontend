@@ -2,12 +2,47 @@
 <main class="home">
 
     <div class="left-col">
-        <app-restaurant-list></app-restaurant-list>
+        <h1>
+            <span (click)="changeNeighborhood('All')">All</span> | 
+            <span (click)="changeNeighborhood('Brooklyn')">Brooklyn</span> | 
+            <span (click)="changeNeighborhood('Manhattan')">Manhattan</span> | 
+            <span (click)="changeNeighborhood('The Bronx')">The Bronx</span> | 
+            <span (click)="changeNeighborhood('Staten Island')">Staten Island</span></h1>
+        <table>
+            <tbody id="neighborhood-restaurants-table">
+                <ng-container *ngFor="let neighborhood of neighborhoods">
+                    <tr>
+                        <td class="borough borough-line">{{ neighborhood.name }}</td>
+                        <td class="borough-line">Size(km²): {{ neighborhood.size }}</td>
+                        <td class="borough-line">Population: {{ neighborhood.population }}</td>
+                        <td class="borough-line"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Restaurant name</td>
+                        <td>Rating</td>
+                        <td>Price Range</td>
+                        <td></td>
+                    
+                    </tr>
+                    <ng-container *ngFor="let restaurant of neighborhood.restaurants">
+                        <tr>
+                            <td>{{ restaurant.name}}</td>
+                            <td>{{ restaurant.rating }}</td>
+                            <td>{{ restaurant.priceRange }}</td>
+                            <td><input type="button" value="Details" (click)="showDetails(restaurant.name)"></td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+                
+            </tbody>
+        </table>
     </div>
-
-    <div class="right-col">
-        <app-restaurant-info></app-restaurant-info>
+    
+    <div class="right-col" *ngIf="showInfo">
+        <app-restaurant-info [restaurant]="currentRestaurant"></app-restaurant-info>
     </div>
+   
     
 </main>
 

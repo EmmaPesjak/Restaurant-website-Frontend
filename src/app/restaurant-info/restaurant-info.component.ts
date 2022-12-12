@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BackendService } from '../backend.service';
 import { Restaurant } from '../restaurant';
 
@@ -10,25 +10,35 @@ import { Restaurant } from '../restaurant';
 
 export class RestaurantInfoComponent {
 
-    restaurant!: Restaurant | undefined;
-    restaurantName: string = "White Lotus";  //Här ska det inte vara hårdkodat :)
 
-    constructor(private backend: BackendService) {
-      this.restaurant = undefined; 
-      //this.restaurantName = restaurantName
-    }
+
+
+  @Input() restaurant: Restaurant | undefined;
+
+
+
+
+
+
+    // restaurant!: Restaurant | undefined;
+
+    // constructor(private backend: BackendService) {
+    //   this.restaurant = undefined; 
+    //   //this.restaurantName = restaurantName
+    // }
   
-    ngOnInit(): void {
-      this.getRestaurant();
-    }
+    // ngOnInit(): void {
+    //   //this.getRestaurant(this.restaurantName);
+    // }
   
   
-    getRestaurant() {
-      this.backend.getRestaurant(this.restaurantName)
-        .then(restaurant => {
-          this.restaurant = restaurant;
-        })
-        .catch(error => console.error(`An error occurred getting the restaurant: ${error}`));
-    }
+    // getRestaurantAndShow(restaurantName: string) {
+    //   console.log("Detta är child")
+    //   this.backend.getRestaurant(restaurantName)
+    //     .then(restaurant => {
+    //       this.restaurant = restaurant;
+    //     })
+    //     .catch(error => console.error(`An error occurred getting the restaurant: ${error}`));
+    // }
 
 }

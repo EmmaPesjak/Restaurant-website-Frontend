@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RestaurantInfoComponent } from './restaurant-info/restaurant-info.component';
-import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/update-delete-restaurants.component';
 
@@ -18,7 +17,6 @@ import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/up
     HomeComponent,
     AdminComponent,
     RestaurantInfoComponent,
-    RestaurantListComponent,
     AddRestaurantComponent,
     UpdateDeleteRestaurantsComponent
   ],
