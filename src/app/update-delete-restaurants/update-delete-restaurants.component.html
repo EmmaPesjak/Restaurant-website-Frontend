@@ -2,16 +2,28 @@
     <thead>
         <tr>
             <td>Name</td>
-            <td>Owner</td>
+            <td>Michelin stars</td>
+            <td>Price range</td>
         </tr>
     </thead>
     <tbody id="restaurants-table">
         <ng-container *ngFor="let restaurant of restaurants">
             <tr>
                 <td>{{ restaurant.name }}</td>
-                <td>{{ restaurant.owner }}</td>
+                <td>
+                    <select >
+                        <option [value]="">{{ restaurant.michelinStars }}</option>                        
+                        <option *ngFor="let star of stars">{{ star }}</option>
+                    </select>
+                </td>
+                <td>
+                    <select >
+                        <option [value]="">{{ restaurant.priceRange }}</option>                        
+                        <option *ngFor="let price of prices">{{ price }}</option>
+                    </select>
+                </td>
                 <td> 
-                    <input type="button" value="Update" (click)="updateRestaurant('hej', 'hej')">
+                    <input type="button" value="Update" (click)="updateRestaurant()">
                 </td>
                 <td>
                     <input type="button" value="Delete" (click)="deleteRestaurant(restaurant.name)">

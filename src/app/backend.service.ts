@@ -52,11 +52,19 @@ export class BackendService {
     return responsePromise;
   }
 
-  updateRestaurant(restaurant: string, owner: string) {
+  /**
+   * 
+   * @param restaurant 
+   * @param michelinStars 
+   * @param priceRange 
+   * @returns 
+   */
+  updateRestaurant(restaurant: string, michelinStars: number, priceRange: string) {
     const endpoint = this.API_URL + '/api/restaurants/' + restaurant;
     const body = {
       //name: restaurant,  //tror inte jag behöver den
-      owner: owner
+      michelinStars: michelinStars,
+      priceRange: priceRange
     };
     const responseObservable = this.http.put<Restaurant>(endpoint, body);
     const responsePromise = firstValueFrom(responseObservable);

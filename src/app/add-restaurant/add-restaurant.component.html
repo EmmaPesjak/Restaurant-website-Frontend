@@ -1,60 +1,68 @@
-<form class="add-restaurant-form">
+<form ngNativeValidate class="add-restaurant-form" id="add-restaurant-form">
    
     <h1>Add restaurant</h1>
 
     <label>Name:
-      <input class="form-field" [(ngModel)]="name" name="name"/>
+      <input class="form-field" [(ngModel)]="name" name="name" required/>
     </label>&nbsp;<br>
   
     <label>Rating:
-      <input class="form-field" [(ngModel)]="rating" name="rating" type="number" min="0.0" max="5.0"/>
+      <input class="form-field" [(ngModel)]="rating" name="rating" type="number" min="0.0" max="5.0" required/>
     </label>&nbsp;<br>
   
     <label>Address:
-      <input class="form-field" [(ngModel)]="address" name="address"/>
+      <input class="form-field" [(ngModel)]="address" name="address" required/>
     </label>&nbsp;<br>
   
     <label>Neighborhood:
-      <input class="form-field" [(ngModel)]="neighborhood" name="neighborhood"/>
+      <select [(ngModel)]="neighborhood" name="neighborhood" required>
+        <option *ngFor="let neighborhood of neighborhoods">{{ neighborhood }}</option>
+      </select>
     </label>&nbsp;<br>
   
     <label>Owner:
-      <input class="form-field" [(ngModel)]="owner" name="owner"/>
+      <input class="form-field" [(ngModel)]="owner" name="owner" required/>
     </label>&nbsp;<br>
 
     <label>Cuisine:
-        <input class="form-field" [(ngModel)]="cuisine" name="cuisine"/>
+        <input class="form-field" [(ngModel)]="cuisine" name="cuisine" required/>
     </label>&nbsp;<br>
 
     <label>Head Chef:
-        <input class="form-field" [(ngModel)]="headChef" name="headChef"/>
+        <input class="form-field" [(ngModel)]="headChef" name="headChef" required/>
     </label>&nbsp;<br>
 
     <label>Price range:
-        <input class="form-field" [(ngModel)]="priceRange" name="priceRange"/>
+        <select [(ngModel)]="priceRange" name="priceRange" required>
+          <option *ngFor="let price of prices">{{ price }}</option>
+        </select>
     </label>&nbsp;<br>
 
     <label>Michelin stars:
-        <input class="form-field" [(ngModel)]="michelinStars" name="michelinStars" type="number" min="0" max="3"/>
+        <select [(ngModel)]="michelinStars" name="michelinStars" required>
+          <option *ngFor="let star of stars">{{ star }}</option>
+        </select>
     </label>&nbsp;<br>
 
     <label>Guests per year:
-        <input class="form-field" [(ngModel)]="guestsPerYear" name="guestsPerYear" type="number" min="0"/>
+        <input class="form-field" [(ngModel)]="guestsPerYear" name="guestsPerYear" type="number" min="0" required/>
     </label>&nbsp;<br>
 
     <label>Phone:
-        <input class="form-field" [(ngModel)]="phone" name="phone"/>
+        <input class="form-field" [(ngModel)]="phone" name="phone" required/>
     </label>&nbsp;<br>
 
     <label>Number of reviews:
-        <input class="form-field" [(ngModel)]="noOfReviews" name="noOfReviews" type="number" min="0"/>
+        <input class="form-field" [(ngModel)]="noOfReviews" name="noOfReviews" type="number" min="0" required/>
     </label>&nbsp;<br>
 
     <label>Latest review:
-        <input class="form-field" [(ngModel)]="latestReview" name="latestReview"/>
+        <input class="form-field" [(ngModel)]="latestReview" name="latestReview" required/>
     </label>&nbsp;<br>
   
 
-    <input type="button" value="Add" (click)="addRestaurant()">
+    <input type="submit" for="add-restaurant-form" value="Add" (click)="addRestaurant()">
+
+    <p *ngIf="message">{{ message }}</p>
   
 </form>

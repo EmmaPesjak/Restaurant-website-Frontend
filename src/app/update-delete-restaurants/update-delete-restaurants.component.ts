@@ -10,10 +10,18 @@ import { Restaurant } from '../restaurant';
 export class UpdateDeleteRestaurantsComponent {
 
 
+  //priceRange: string;
+  //michelinStars: number;
   restaurants: Restaurant[];
+
+  prices = ["$", "$$", "$$$"];
+  stars = [0, 1, 2, 3];
 
   constructor(private backend: BackendService) {
     this.restaurants = []; 
+
+    //this.priceRange = ""
+    //this.michelinStars = 0;
   }
 
 
@@ -55,9 +63,13 @@ export class UpdateDeleteRestaurantsComponent {
   }
   
 
-  updateRestaurant(restaurantName: string, owner: string) {
+  updateRestaurant() {
 
+    //console.log(this.priceRange)
+    //console.log(this.michelinStars)
     //kör inte owner här
+
+    //this.backend.updateRestaurant(michelinStars, priceRange);
 
   }
 }

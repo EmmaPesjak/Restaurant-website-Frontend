@@ -49,3 +49,12 @@ td {
     padding-right: 1em;
 }
 
+select {
+    color: maroon;
+    margin-bottom: .8em;
+    padding: .2em;
+    background-color: rgba(255, 255, 255, 0.705);
+    border: 1px solid white;
+    font-family: 'Montserrat', sans-serif;
+}
+

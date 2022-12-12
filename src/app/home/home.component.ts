@@ -45,7 +45,7 @@ export class HomeComponent {
 
   changeNeighborhood(neighborhoodName: string) {
     //töm neighborhoods och hämta igen, kanske ingen optimal lösning men det är för att få med kravet get one
-    this.neighborhoods = []
+    this.neighborhoods = [];
 
     if (neighborhoodName == "All") {
       this.getNeighborhoodsWithRestaurants();
@@ -53,7 +53,6 @@ export class HomeComponent {
       this.backend.getNeighborhoodWithRestaurants(neighborhoodName)
       .then(neighborhood => {
         this.neighborhoods = [neighborhood];
-        console.log(neighborhood)
       })
       .catch(error => console.error(`An error occurred getting the neighborhood and restaurants: ${error}`));
     }
