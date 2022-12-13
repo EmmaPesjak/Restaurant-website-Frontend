@@ -7,13 +7,17 @@ import { Restaurant } from './restaurant';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BackendService {
 
   readonly API_URL = "https://empe2105-project-backend-dt190g.azurewebsites.net";
 
   constructor(private http: HttpClient) { }
 
-
+  /**
+   * 
+   * @returns 
+   */
   getNeighborhoodsWithRestaurants(): Promise<Neighborhood[]> {
     const endpoint = this.API_URL + '/api/all';
     const responseObservable = this.http.get<Neighborhood[]>(endpoint);
@@ -21,6 +25,11 @@ export class BackendService {
     return responsePromise;
   }
 
+  /**
+   * 
+   * @param neighborhood 
+   * @returns 
+   */
   getNeighborhoodWithRestaurants(neighborhood: string): Promise<Neighborhood> {
     const endpoint = this.API_URL + '/api/neighborhoods/' + neighborhood;
     const responseObservable = this.http.get<Neighborhood>(endpoint);
@@ -29,7 +38,7 @@ export class BackendService {
   }
 
 
-  //  hur fungerar det här när det de har olika många attribut?
+  //  hur fungerar det här när det de har olika många attribut? Använder inte denna?
   getNeighborhoods(): Promise<Neighborhood[]> {
     const endpoint = this.API_URL + '/api/neighborhoods';
     const responseObservable = this.http.get<Neighborhood[]>(endpoint);
@@ -38,6 +47,10 @@ export class BackendService {
   }
 
 
+  /**
+   * 
+   * @returns 
+   */
   getRestaurants(): Promise<Restaurant[]> {
     const endpoint = this.API_URL + '/api/restaurants';
     const responseObservable = this.http.get<Restaurant[]>(endpoint);
@@ -45,6 +58,7 @@ export class BackendService {
     return responsePromise;
   }
 
+  //Använder inte denna?
   getRestaurant(restaurant: string): Promise<Restaurant> {
     const endpoint = this.API_URL + '/api/restaurants/' + restaurant;
     const responseObservable = this.http.get<Restaurant>(endpoint);
@@ -66,6 +80,11 @@ export class BackendService {
     return responsePromise;
   }
 
+  /**
+   * 
+   * @param restaurant 
+   * @returns 
+   */
   addRestaurant(restaurant: Restaurant) {
     const endpoint = this.API_URL + '/api/restaurants';
     const body = {
@@ -88,6 +107,11 @@ export class BackendService {
     return responsePromise;
   }
 
+  /**
+   * 
+   * @param restaurantName 
+   * @returns 
+   */
   deleteRestaurant(restaurantName: string) {
     const endpoint = this.API_URL + '/api/restaurants/' + restaurantName;
     const responseObservable = this.http.delete<Restaurant>(endpoint);

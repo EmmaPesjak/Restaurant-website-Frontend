@@ -12,18 +12,22 @@ export class UpdateDeleteRestaurantsComponent {
   restaurants: Restaurant[];
   thisRestaurant: Restaurant | undefined;
 
-  prices = ["$", "$$", "$$$"];
   stars = [0, 1, 2, 3];
 
   constructor(private backend: BackendService) {
     this.restaurants = []; 
   }
 
+  /**
+   * 
+   */
   ngOnInit(): void {
     this.getRestaurants();
   }
 
-
+  /**
+   * 
+   */
   getRestaurants() {
     this.backend.getRestaurants()
       .then(restaurants => {
@@ -32,12 +36,19 @@ export class UpdateDeleteRestaurantsComponent {
       .catch(error => console.error(`An error occurred getting all restaurants: ${error}`));
   }
 
-
+  /**
+   * 
+   * @param restaurant 
+   * @returns 
+   */
   getRestaurantIndex(restaurant: Restaurant) {
     return this.restaurants.findIndex(restaurantInArray => restaurantInArray.name == restaurant.name);
   }
 
-
+  /**
+   * 
+   * @param restaurantName 
+   */
   deleteRestaurant(restaurantName: string) {
 
     this.backend.deleteRestaurant(restaurantName)
@@ -55,6 +66,11 @@ export class UpdateDeleteRestaurantsComponent {
       .catch(error => console.error(`An error occurred when deleting the restaurant: ${error}`));
   }
   
+  /**
+   * 
+   * @param restaurant 
+   * @param event 
+   */
   updateRestaurant(restaurant: Restaurant, event: any) {
 
     this.backend.updateRestaurant(restaurant.name, event.value);

@@ -3,6 +3,7 @@
     margin-left: 4em;
     margin-right: 4em;
     border-radius: 15px;
+    max-width: 500px;
 }
 
 .right-col {

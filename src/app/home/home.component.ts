@@ -44,7 +44,7 @@ export class HomeComponent {
   }
 
   changeNeighborhood(neighborhoodName: string) {
-    //töm neighborhoods och hämta igen, kanske ingen optimal lösning men det är för att få med kravet get one
+    //töm neighborhoods och hämta igen, kanske ingen optimal lösning men det är för att få med kravet get one. is to showcase...
     this.neighborhoods = [];
 
     if (neighborhoodName == "All") {
@@ -56,6 +56,5 @@ export class HomeComponent {
       })
       .catch(error => console.error(`An error occurred getting the neighborhood and restaurants: ${error}`));
     }
-  
   }
 }

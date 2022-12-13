@@ -1,3 +1,6 @@
+/**
+ * Represents a restaurant.
+ */
 export interface Restaurant {
     name: string;
     rating: number;
