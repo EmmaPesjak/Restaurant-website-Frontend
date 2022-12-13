@@ -9,22 +9,15 @@ import { Restaurant } from '../restaurant';
 })
 export class UpdateDeleteRestaurantsComponent {
 
-
-  //priceRange: string;
-  //michelinStars: number;
   restaurants: Restaurant[];
+  thisRestaurant: Restaurant | undefined;
 
   prices = ["$", "$$", "$$$"];
   stars = [0, 1, 2, 3];
 
   constructor(private backend: BackendService) {
     this.restaurants = []; 
-
-    //this.priceRange = ""
-    //this.michelinStars = 0;
   }
-
-
 
   ngOnInit(): void {
     this.getRestaurants();
@@ -62,14 +55,9 @@ export class UpdateDeleteRestaurantsComponent {
       .catch(error => console.error(`An error occurred when deleting the restaurant: ${error}`));
   }
   
+  updateRestaurant(restaurant: Restaurant, event: any) {
 
-  updateRestaurant() {
-
-    //console.log(this.priceRange)
-    //console.log(this.michelinStars)
-    //kör inte owner här
-
-    //this.backend.updateRestaurant(michelinStars, priceRange);
-
+    this.backend.updateRestaurant(restaurant.name, event.value);
+    
   }
 }

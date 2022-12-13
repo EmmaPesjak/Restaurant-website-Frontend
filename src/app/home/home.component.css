@@ -38,6 +38,8 @@ tbody ul {
 
 .borough-line {
     border-bottom: 1px solid;
+    padding-top: .8em;
+    padding-bottom: .2em;
 }
 
 span {
