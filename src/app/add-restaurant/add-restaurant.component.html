@@ -1,6 +1,9 @@
+<!-- 
+  Create a form for adding restaurants. ngNativeValidate ensures validation of required attributes. 
+-->
 <form ngNativeValidate class="add-restaurant-form" id="add-restaurant-form">
    
-    <h1>Add restaurant</h1>
+    <h2>Add restaurant</h2>
 
     <label>Name:
       <input class="form-field" [(ngModel)]="name" name="name" required/>
@@ -14,6 +17,10 @@
       <input class="form-field" [(ngModel)]="address" name="address" required/>
     </label>&nbsp;<br>
   
+    <!-- 
+      Create a select with neighborhood options to ensure that the user does not input a neighborhood 
+      that does not exist. 
+    -->
     <label>Neighborhood:
       <select [(ngModel)]="neighborhood" name="neighborhood" required>
         <option *ngFor="let neighborhood of neighborhoods">{{ neighborhood }}</option>
@@ -59,10 +66,10 @@
     <label>Latest review:
         <input class="form-field" [(ngModel)]="latestReview" name="latestReview" required/>
     </label>&nbsp;<br>
-  
 
     <input type="submit" for="add-restaurant-form" value="Add" (click)="addRestaurant()">
 
+    <!-- Place for success/error message to be displayed -->
     <p *ngIf="message">{{ message }}</p>
   
 </form>

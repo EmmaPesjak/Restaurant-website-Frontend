@@ -72,8 +72,6 @@ export class UpdateDeleteRestaurantsComponent {
    * @param event 
    */
   updateRestaurant(restaurant: Restaurant, event: any) {
-
     this.backend.updateRestaurant(restaurant.name, event.value);
-    
   }
 }

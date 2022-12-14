@@ -1,6 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-
+/* Global styles, imported font. */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
@@ -58,3 +56,11 @@ select {
     font-family: 'Montserrat', sans-serif;
 }
 
+h2 {
+    color: rgb(206, 114, 3);
+    font-weight: bold;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-right: 1em;
+}

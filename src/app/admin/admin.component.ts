@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
 
-}
+/**
+ * Admin class component, a simple container for add and update/delete components.
+ */
+export class AdminComponent { }

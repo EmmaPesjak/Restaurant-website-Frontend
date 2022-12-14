@@ -79,10 +79,13 @@ export class AddRestaurantComponent {
     .catch(error => this.handleError(error));
   }
 
-
+  /**
+   * 
+   * @param restaurant 
+   */
   handleAddedRestaurant(restaurant: Restaurant) {
 
-    // Clear user input (will update form input elements)
+    // Clear user input.
     this.name = "";
     this.rating = undefined;
     this.address = "";
@@ -97,12 +100,16 @@ export class AddRestaurantComponent {
     this.noOfReviews = undefined;
     this.latestReview = "";
 
-    // Create a success message
+    // Create a success message.
     const message: string = `The restaurant ${restaurant.name} was added`;
 
     this.displayMessage(message);
   }
 
+  /**
+   * 
+   * @param error 
+   */
   handleError(error: HttpErrorResponse) {
     console.error(`error adding restaurant: ${error.status} ${error.statusText}`);
     const message: string = error.error.error;
@@ -120,12 +127,12 @@ export class AddRestaurantComponent {
     this.message = message; // hides the message if message parameter is undefined
 
     if (autoHide) {
-      // Set a timer which executes a the specified piece of code once the timer expires
+      // Set a timer for the message.
       setTimeout(() => {
-        // The code to be executed
-        this.message = undefined; // Angular will remove it from the DOM
+        this.message = undefined; 
+        window.location.reload(); // reload the window so the restaurant list is updated.
       },
-        5000);
+        4000);
     }
   }
 }

@@ -7,6 +7,9 @@ import { Restaurant } from '../restaurant';
   styleUrls: ['./restaurant-info.component.css']
 })
 
+/**
+ * Child component of the home page, displays restaurant information.
+ */
 export class RestaurantInfoComponent {
   @Input() restaurant: Restaurant | undefined;
 }

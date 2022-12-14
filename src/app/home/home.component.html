@@ -1,14 +1,12 @@
-
 <main class="home">
-
     <div class="left-col">
-        <h1>
+        <h2>
             <span (click)="changeNeighborhood('All')">All</span> | 
             <span (click)="changeNeighborhood('Brooklyn')">Brooklyn</span> | 
             <span (click)="changeNeighborhood('Manhattan')">Manhattan</span> | 
             <span (click)="changeNeighborhood('The Bronx')">The Bronx</span> | 
             <span (click)="changeNeighborhood('Queens')">Queens</span> | 
-            <span (click)="changeNeighborhood('Staten Island')">Staten Island</span></h1>
+            <span (click)="changeNeighborhood('Staten Island')">Staten Island</span></h2>
         <table>
             <tbody id="neighborhood-restaurants-table">
                 <ng-container *ngFor="let neighborhood of neighborhoods">
@@ -31,7 +29,7 @@
                             <td>{{ restaurant.name}}</td>
                             <td>{{ restaurant.rating }}</td>
                             <td>{{ restaurant.priceRange }}</td>
-                            <td><input type="button" value="Details" (click)="showDetails(restaurant.name)"></td>
+                            <td><input type="button" value="Details" (click)="showDetails(restaurant)"></td>
                         </tr>
                     </ng-container>
                 </ng-container>
@@ -40,10 +38,8 @@
         </table>
     </div>
     
+    <!-- Displays a child component with details of the restaurant if the boolean is true. -->
     <div class="right-col" *ngIf="showInfo">
         <app-restaurant-info [restaurant]="currentRestaurant"></app-restaurant-info>
-    </div>
-   
-    
+    </div>   
 </main>
-
