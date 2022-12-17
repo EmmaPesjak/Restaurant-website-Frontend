@@ -3,12 +3,15 @@ import { BackendService } from '../backend.service';
 import { Restaurant } from '../restaurant';
 import { HttpErrorResponse } from "@angular/common/http";
 
-
 @Component({
   selector: 'app-add-restaurant',
   templateUrl: './add-restaurant.component.html',
   styleUrls: ['./add-restaurant.component.css']
 })
+
+/**
+ * Component for adding restaurants.
+ */
 export class AddRestaurantComponent {
 
   name: string;
@@ -25,13 +28,14 @@ export class AddRestaurantComponent {
   noOfReviews?: number;
   latestReview: string;
 
-  //ej hådekoda dessa? hämta?
+  // Arrays for the selects.
   neighborhoods = ["Manhattan", "Brooklyn", "The Bronx", "Staten Island", "Queens"];
   prices = ["$", "$$", "$$$"];
   stars = [0, 1, 2, 3];
 
   message: string | undefined;
 
+  // Emitter for telling the restaurant list in the parent component that a new restaurant has been added.
   @Output() newRestaurantEvent: EventEmitter<Restaurant>;
 
   constructor(private backend: BackendService) {
@@ -48,12 +52,14 @@ export class AddRestaurantComponent {
     this.phone = "";
     this.noOfReviews = undefined;
     this.latestReview = "";
-
     this.newRestaurantEvent = new EventEmitter<Restaurant>();
   }
 
   /**
-   * 
+   * Method for adding a restaurant, communicate all input to the backend service.
+   * Since the required attribute is used in each form item in the HTML, and selects with 
+   * crucial values (such as neighborhoods) are implemented, no further validation of the
+   * user input is needed here.
    */
   addRestaurant() {
     let addRestaurantPromise: Promise<Restaurant>;
@@ -74,14 +80,15 @@ export class AddRestaurantComponent {
     latestReview: this.latestReview
   });
 
+  // Call the handle methods depending on the outcome of the promise.
   addRestaurantPromise
     .then(restaurant => this.handleAddedRestaurant(restaurant))
     .catch(error => this.handleError(error));
   }
 
   /**
-   * 
-   * @param restaurant 
+   * Clears the user input and displays a message that the restaurant has been added.
+   * @param restaurant is the restaurant that has been added.
    */
   handleAddedRestaurant(restaurant: Restaurant) {
 
@@ -100,39 +107,37 @@ export class AddRestaurantComponent {
     this.noOfReviews = undefined;
     this.latestReview = "";
 
-    // Create a success message.
+    // Create and display a success message.
     const message: string = `The restaurant ${restaurant.name} was added`;
-
     this.displayMessage(message);
+
+    // Emit the restaurant so that the parent component can update the list of restaurants.
+    this.newRestaurantEvent.emit(restaurant)
   }
 
   /**
-   * 
-   * @param error 
+   * Handles errors when adding restaurants. Will occur if the user does not enter a unique 
+   * name for the restaurant to add.
+   * @param error is the error thrown by the client.
    */
   handleError(error: HttpErrorResponse) {
     console.error(`error adding restaurant: ${error.status} ${error.statusText}`);
     const message: string = error.error.error;
-
+    // Display the error message.
     this.displayMessage(message);
   }
 
   /**
-   * Displays the specified Message in the add user form. To hide the message
-   * pass undefined as the message (first argument).
-   * @param message the message to display
-   * @param autoHide true if the message should be hidden after 5 seconds
+   * Displays a message when the user is trying to add a restaurant.
+   * @param message is the message to display.
    */
-  displayMessage(message: string, autoHide: boolean = true) {
+  displayMessage(message: string) {
     this.message = message; // hides the message if message parameter is undefined
 
-    if (autoHide) {
-      // Set a timer for the message.
-      setTimeout(() => {
-        this.message = undefined; 
-        window.location.reload(); // reload the window so the restaurant list is updated.
-      },
-        4000);
-    }
+    // Set a timeout that ensures that the message is only displayed for 4 seconds.
+    setTimeout(() => {
+      this.message = undefined; 
+    },
+      4000);
   }
 }

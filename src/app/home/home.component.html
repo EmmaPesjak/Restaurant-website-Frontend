@@ -6,9 +6,11 @@
             <span (click)="changeNeighborhood('Manhattan')">Manhattan</span> | 
             <span (click)="changeNeighborhood('The Bronx')">The Bronx</span> | 
             <span (click)="changeNeighborhood('Queens')">Queens</span> | 
-            <span (click)="changeNeighborhood('Staten Island')">Staten Island</span></h2>
+            <span (click)="changeNeighborhood('Staten Island')">Staten Island</span>
+        </h2>
         <table>
             <tbody id="neighborhood-restaurants-table">
+                <!-- Loop over the list, add each neighborhood to the table and display the information. -->
                 <ng-container *ngFor="let neighborhood of neighborhoods">
                     <tr>
                         <td class="borough borough-line">{{ neighborhood.name }}</td>
@@ -24,16 +26,17 @@
                         <td></td>
                     
                     </tr>
+                    <!-- Loop over the neighborhood's restaurants, add them to the table. -->
                     <ng-container *ngFor="let restaurant of neighborhood.restaurants">
                         <tr>
                             <td>{{ restaurant.name}}</td>
                             <td>{{ restaurant.rating }}</td>
                             <td>{{ restaurant.priceRange }}</td>
+                            <!-- Button for showing the details of the restaurant in a child component. -->
                             <td><input type="button" value="Details" (click)="showDetails(restaurant)"></td>
                         </tr>
                     </ng-container>
                 </ng-container>
-                
             </tbody>
         </table>
     </div>

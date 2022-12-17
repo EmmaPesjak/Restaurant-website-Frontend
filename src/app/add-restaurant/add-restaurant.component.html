@@ -1,5 +1,6 @@
 <!-- 
   Create a form for adding restaurants. ngNativeValidate ensures validation of required attributes. 
+  Bind values with ngModel.
 -->
 <form ngNativeValidate class="add-restaurant-form" id="add-restaurant-form">
    
@@ -9,6 +10,7 @@
       <input class="form-field" [(ngModel)]="name" name="name" required/>
     </label>&nbsp;<br>
   
+    <!-- Make sure to set a min and max for the raing. -->
     <label>Rating:
       <input class="form-field" [(ngModel)]="rating" name="rating" type="number" min="0.0" max="5.0" required/>
     </label>&nbsp;<br>
@@ -39,12 +41,17 @@
         <input class="form-field" [(ngModel)]="headChef" name="headChef" required/>
     </label>&nbsp;<br>
 
+    <!-- Create a select with price options to ensure that the user does not input another type of value. -->
     <label>Price range:
         <select [(ngModel)]="priceRange" name="priceRange" required>
           <option *ngFor="let price of prices">{{ price }}</option>
         </select>
     </label>&nbsp;<br>
 
+    <!-- 
+      Create a select with amount of star options. Could have done the same as the rating with 
+      min/max but selects are cool. 
+    -->
     <label>Michelin stars:
         <select [(ngModel)]="michelinStars" name="michelinStars" required>
           <option *ngFor="let star of stars">{{ star }}</option>
@@ -67,6 +74,7 @@
         <input class="form-field" [(ngModel)]="latestReview" name="latestReview" required/>
     </label>&nbsp;<br>
 
+    <!-- Call the addRestaurant() method when the user presses the button. -->
     <input type="submit" for="add-restaurant-form" value="Add" (click)="addRestaurant()">
 
     <!-- Place for success/error message to be displayed -->

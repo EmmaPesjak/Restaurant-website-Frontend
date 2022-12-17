@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RestaurantInfoComponent } from './restaurant-info/restaurant-info.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
-import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/update-delete-restaurants.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/up
     HomeComponent,
     AdminComponent,
     RestaurantInfoComponent,
-    AddRestaurantComponent,
-    UpdateDeleteRestaurantsComponent
+    AddRestaurantComponent
   ],
   imports: [
     BrowserModule,
@@ -29,4 +27,8 @@ import { UpdateDeleteRestaurantsComponent } from './update-delete-restaurants/up
   providers: [],
   bootstrap: [AppComponent]
 })
+
+/**
+ * Root module of the application.
+ */
 export class AppModule { }

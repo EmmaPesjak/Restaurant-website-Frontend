@@ -8,7 +8,7 @@ import { Restaurant } from '../restaurant';
 })
 
 /**
- * Child component of the home page, displays restaurant information.
+ * Child component of the home page, displays restaurant information which it gets from the input decorator.
  */
 export class RestaurantInfoComponent {
   @Input() restaurant: Restaurant | undefined;

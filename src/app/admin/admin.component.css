@@ -18,3 +18,11 @@
     display: flex;
     justify-content: flex-start;
 }
+
+table {
+    margin-top: 1em;
+}
+
+select {
+    margin-top: .6em;
+}

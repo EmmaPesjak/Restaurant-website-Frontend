@@ -1,11 +1,43 @@
 <main class="admin">
 
     <div class="left-col">
-        <app-update-delete-restaurants></app-update-delete-restaurants>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Michelin stars</td>
+                </tr>
+            </thead>
+
+            <!-- Loop over the restaurant list, add each restaurant to the table. -->
+            <tbody id="restaurants-table">
+                <ng-container *ngFor="let restaurant of restaurants">
+                    <tr>
+                        <td>{{ restaurant.name }}</td>
+                        <td>
+                            <!-- Call the updateRestaurant() method when the user changes the select. -->
+                            <select (change)="updateRestaurant(restaurant.name, $event.target)">
+                                <!-- Set the default select value to be the restaurants current number of stars. -->
+                                <option [value]="">{{ restaurant.michelinStars }}</option>   
+                                <!-- Set the rest of the options from the stars array. -->                     
+                                <option *ngFor="let star of stars">{{ star }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <!-- Call the deleteRestaurant() method when the user presses the delete button. -->
+                            <input type="button" value="Delete" (click)="deleteRestaurant(restaurant.name)">
+                        </td> 
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
     </div>
 
+    <!-- The add-restaurant component as a child component. When a new restaurant is added, 
+        the child emits the restaurant and the parent calls the "onNewRestaurant($event)" method 
+        for updating the list of restaurants. -->
     <div class="right-col">
-        <app-add-restaurant></app-add-restaurant>
+        <app-add-restaurant (newRestaurantEvent)="onNewRestaurant($event)"></app-add-restaurant>
     </div>
     
 </main>
