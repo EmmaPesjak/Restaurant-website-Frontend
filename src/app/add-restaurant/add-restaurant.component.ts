@@ -28,7 +28,8 @@ export class AddRestaurantComponent {
   noOfReviews?: number;
   latestReview: string;
 
-  // Arrays for the selects.
+  // Arrays for the selects, would be better to define in the database and require through an endpoint, but that was not
+  // necessary for this project.
   neighborhoods = ["Manhattan", "Brooklyn", "The Bronx", "Staten Island", "Queens"];
   prices = ["$", "$$", "$$$"];
   stars = [0, 1, 2, 3];

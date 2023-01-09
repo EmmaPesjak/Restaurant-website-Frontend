@@ -14,7 +14,7 @@ import { Restaurant } from './restaurant';
  */
 export class BackendService {
 
-  readonly API_URL = "https://empe2105-project-backend-dt190g.azurewebsites.net";
+  readonly API_URL = "https://empe2105-project-ht22-backend-dt190g.azurewebsites.net";
 
   constructor(private http: HttpClient) { }
 
