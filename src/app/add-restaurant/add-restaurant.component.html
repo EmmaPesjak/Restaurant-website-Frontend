@@ -2,7 +2,7 @@
   Create a form for adding restaurants. ngNativeValidate ensures validation of required attributes. 
   Bind values with ngModel.
 -->
-<form ngNativeValidate class="add-restaurant-form" id="add-restaurant-form">
+<form ngNativeValidate class="add-restaurant-form" id="add-restaurant-form" (ngSubmit)="addRestaurant()">
    
     <h2>Add restaurant</h2>
 
@@ -75,7 +75,7 @@
     </label>&nbsp;<br>
 
     <!-- Call the addRestaurant() method when the user presses the button. -->
-    <input type="submit" for="add-restaurant-form" value="Add" (click)="addRestaurant()">
+    <input type="submit" for="add-restaurant-form" value="Add">
 
     <!-- Place for success/error message to be displayed -->
     <p *ngIf="message">{{ message }}</p>
